@@ -8,6 +8,12 @@ export default function Input() {
 
 	function handleSubmit(e: Event) {
 		e.preventDefault();
+
+    // disable the button while the request is being made
+    const button = document.querySelector("button")!;
+    button.disabled = true;
+    button.textContent = "Summarizing...";
+
 		const test = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/gi;
 		const res = test?.exec(video())?.[1];
 		console.log(res);
