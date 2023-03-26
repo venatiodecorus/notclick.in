@@ -43,3 +43,7 @@ p {
     max-width: none;
   }
 }
+
+.try-again {
+  font-size: 2rem;
+}
