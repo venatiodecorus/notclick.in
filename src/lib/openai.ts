@@ -14,7 +14,7 @@ export async function getSummary(text: string) {
         model: "gpt-3.5-turbo",
         messages: [{"role": "system", "content": "You are an assistant that generates helpful, concise summaries of YouTube videos from their subtitles. Interpret each message as a video transcript and summarize."}, {"role": "user", "content": text}],
         temperature: 0.7,
-        max_tokens: 256,
+        max_tokens: 1024,
         top_p: 1.0,
         frequency_penalty: 0.0,
         presence_penalty: 0.0
