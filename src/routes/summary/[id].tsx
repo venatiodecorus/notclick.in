@@ -25,6 +25,7 @@ export default function Summary() {
             <Title>Summary</Title>
             <Show when={video()?.content} fallback={<div class="summary">We were unable to retrieve subtitles for this video.<div class="try-again"><a href="/">Try another video.</a></div></div>}>
                 <div class="summary">{video()?.content}</div>
+                <div class="try-again"><a href="/">Summarize another video</a></div>
             </Show>
         </main>
     );
