@@ -9,12 +9,15 @@ export default function Input() {
 	function handleSubmit(e: Event) {
 		e.preventDefault();
 
+    // don't allow user to submit a blank request
+    if (!video()) return;
+    
     // disable the button while the request is being made
     const button = document.querySelector("button")!;
-    button.disabled = true;
-    button.textContent = "Summarizing...";
+    button.setAttribute("disabled", "true");
+    button.innerHTML = `<img class="spinner" width="20" height="20" src="/spinner.svg" alt="spinner" />`;
 
-		const test = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/gi;
+		const test = /(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?/\s]{11})/gi;
 		const res = test?.exec(video())?.[1];
 		console.log(res);
 		if (res) {
@@ -25,9 +28,11 @@ export default function Input() {
 	}
 
 	return (
+    <div class="form">
 		<form>
-			<input class="idinput" type="text" value={video()} onChange={e => setVideo(e.currentTarget.value)} placeholder="Paste YouTube URL" />
+			<input class="idinput" type="text" value={video()} onChange={e => setVideo(e.currentTarget.value)} placeholder="Paste YouTube URL.." />
 			<button class="submit" onClick={handleSubmit}>Summarize</button>
 		</form>
+    </div>
 	);
 }
