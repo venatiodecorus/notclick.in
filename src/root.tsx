@@ -32,6 +32,10 @@ export default function Root() {
         </Suspense>
         <Scripts />
       </Body>
+      <footer class="footer">
+        <a href="https://twitter.com/venatiodecorus">VenatioDecorus</a>|
+        <a href="https://github.com/venatiodecorus/notclick.in">Github</a>
+      </footer>
     </Html>
   );
 }

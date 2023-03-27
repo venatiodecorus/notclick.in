@@ -47,3 +47,17 @@ p {
 .try-again {
   font-size: 2rem;
 }
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.footer a {
+  margin: 0 0.5rem 0 0.5rem;
+}
