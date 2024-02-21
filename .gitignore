@@ -24,5 +24,6 @@ gitignore
 .DS_Store
 Thumbs.db
 
-public/captions/*
+# public/captions/*
+*.ttml
 .env
